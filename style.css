@@ -1,0 +1,51 @@
+body {
+	font-family: sans-serif;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	background: url('imagens/logo_ta.jpg') no-repeat;
+	height: 56px;
+	padding: 10px 0 0 120px;
+	font-size: 24pt;
+}
+
+aside {
+	float: left;
+	width: 20%;
+}
+
+h2 {
+	margin: 0 0 10px 0;
+}
+
+article {
+	margin: 0 0 0 200px;
+	height: 100%;
+}
+
+#mapa {
+	width: 90%;
+	height:80%;
+}
+
+#label-ciclovia		{ background-image: url('imagens/ciclovia.jpg');	}
+#label-proibida		{ background-image: url('imagens/proibida.jpg');	}
+#label-aluguel		{ background-image: url('imagens/aluguel.jpg');  	}
+#label-bicicletario	{ background-image: url('imagens/bicicletario.jpg');}
+#label-bomba		{ background-image: url('imagens/bomba.jpg');		}
+#label-chuveiro		{ background-image: url('imagens/chuveiro.jpg');	}
+#label-oficina		{ background-image: url('imagens/oficina.jpg');		}
+
+label.ponto {
+	background-position: 6px 0;
+}
+
+label {
+	background-repeat: no-repeat;
+	padding: 0 0 0 35px;
+}
