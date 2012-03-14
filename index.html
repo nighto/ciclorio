@@ -56,47 +56,27 @@
 				</li>
 			</ul>
 
-			<script type="text/javascript">
+			<script src="atualiza-mapa.js"></script>
 
-function checkbox_test() {
-	var preenchidas = 0,// conta quantas checkboxes foram preenchidas
-		i = 0,			// contador do loop
-		url = '',		// variável que armazenará a URL final do mapa
-		fusion_url = 'https://www.google.com/fusiontables/embedviz?viz=MAP&q=select+col2+from+3139225+where+col4+in+(CARACTERISTICAS)&h=false&lat=-22.93949546286523&lng=-43.34304013427737&z=11&t=1&l=col2',
+			<input type="button" value="Atualiza Mapa" onclick="javascript:atualiza_mapa()" />
 
-		// cria um array com todos os inputs da página
-		inputs_obj = document.getElementsByTagName('input');
+			<p>Este mapa é uma iniciativa da <a href="http://ta.org.br/">Transporte Ativo</a> e dos seguintes colaboradores:</p>
 
-	// percorre todos os inputs coletados
-	for (i = 0; i < inputs_obj.length; i++) {
-		// se é um checkbox e está marcado, então...
-		if (inputs_obj[i].type === 'checkbox' && inputs_obj[i].checked === true) {
-			// incremente o contador e adicione o valor dele na URL.
-			preenchidas++;
-			url = url + ',\'' + inputs_obj[i].value + '\'';
-		}
-	}
+			<ul class="colaborators">
+				<li><a href="http://nighto.net/">Arlindo Pereira</a></li>
+				<li>Eduardo Rodrigues</li>
+				<li>Giuseppe Zani</li>
+				<li><a href="http://ta.org.br/">José Lobo</a></li>
+				<li>Leonardo Nunes</li>
+				<li>Leo Novarino</li>
+				<li>Lucas Pavel</li>
+				<li><a href="http://nitbikers.wordpress.com/">Marcos Cavalcanti</a></li>
+				<li><a href="https://play.google.com/store/apps/details?id=serrao.rio.de.bike">Marcos Serrão</a></li>
+				<li><a href="http://www.avidadebicicleta.com/">Robson Combat</a></li>
+				<li>Rodrigo Abreu</li>
+			</ul>
 
-	if (preenchidas > 0) {
-		// tira a primeira vírgula
-		url = url.substr(1);
-
-		// coloca as opções escolhidas na URL do Google Fusion Tables
-		fusion_url = fusion_url.replace('CARACTERISTICAS',url);
-
-		// faz com que o iframe carregue a URL montada.
-		document.getElementById('mapa').src = fusion_url;
-
-		// teste
-		//alert (fusion_url);
-	} else {
-		alert ('É necessário escolher ao menos uma característica para exibir o mapa.');
-	}
-}
-
-			</script>
-
-			<input type="button" value="Atualiza Mapa" onclick="javascript:checkbox_test()" />
+			<p>Gostaria de colaborar também? <a href="http://transporteativo.org.br/wp/2012/03/08/mapa-cicloviario-unificado-do-rio-de-janeiro/">Clique aqui</a>.</p>
 		</form>
 	</aside>
 

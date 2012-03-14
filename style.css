@@ -49,3 +49,7 @@ label {
 	background-repeat: no-repeat;
 	padding: 0 0 0 35px;
 }
+
+ul.colaborators {
+	font-size: 12px;
+}
