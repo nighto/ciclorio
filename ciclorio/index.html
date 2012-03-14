@@ -1,25 +1,108 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<title>Mapa Cicloviário Unificado do Rio de Janeiro</title>
 
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
-<FRAMESET ROWS="44,250" >
-<frame name="cabecalho" src="cabecalho.html" scrolling="Auto" frameborder="yes">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 
-<FRAMESET COLS="47,250">  
+<body>
+	<header>
+		<h1>Mapa Cicloviário Unificado do Rio de Janeiro</h1>
+	</header>
+	
+	<aside>
+		<h2>Filtros</h2>
 
-<frame name="filtro" src="filtro.html" scrolling="Auto" frameborder="yes">
-<frame name="mapa" src="https://www.google.com/fusiontables/embedviz?viz=MAP&q=select+col2+from+3139225+&h=false&lat=-22.92511679805726&lng=-43.39634099182132&z=11&t=1&l=col2" scrolling="Auto" frameborder="yes">
+		<form>
+			<ul>
+				<li>
+					<input type="checkbox" checked="checked" id="ciclovia" value="Ciclovia" />
+					<label for="ciclovia" id="label-ciclovia" class="linha">Ciclovia</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="ciclofaixa" value="Ciclofaixa" />
+					<label for="ciclovia" id="label-ciclofaixa" class="linha">Ciclofaixa</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="faixa-compartilhada" value="Faixa+Compartilhada" />
+					<label for="ciclovia" id="label-faixa-compartilhada" class="linha">Faixa Compartilhada</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="proibida" value="Via+Proibida" />
+					<label for="proibida" id="label-proibida" class="linha">Via Proibida</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="aluguel" value="Aluguel+de+Bicicleta" />
+					<label for="ciclovia" id="label-aluguel" class="ponto">Aluguel de Bicicleta</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="bicicletario" value="Bicicletario" />
+					<label for="ciclovia" id="label-bicicletario" class="ponto">Bicicletário</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="bomba" value="Bomba+de+Ar" />
+					<label for="ciclovia" id="label-bomba" class="ponto">Bomba de Ar</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="chuveiro" value="Chuveiro" />
+					<label for="ciclovia" id="label-chuveiro" class="ponto">Chuveiro</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="oficina" value="Oficina+de+Bicicleta" />
+					<label for="oficina" id="label-oficina" class="ponto">Oficina de Bicicleta</label>
+				</li>
+			</ul>
 
+			<script type="text/javascript">
 
+function checkbox_test() {
+	var preenchidas = 0,// conta quantas checkboxes foram preenchidas
+		i = 0,			// contador do loop
+		url = '',		// variável que armazenará a URL final do mapa
+		fusion_url = 'https://www.google.com/fusiontables/embedviz?viz=MAP&q=select+col2+from+3139225+where+col4+in+(CARACTERISTICAS)&h=false&lat=-22.93949546286523&lng=-43.34304013427737&z=11&t=1&l=col2',
 
+		// cria um array com todos os inputs da página
+		inputs_obj = document.getElementsByTagName('input');
 
+	// percorre todos os inputs coletados
+	for (i = 0; i < inputs_obj.length; i++) {
+		// se é um checkbox e está marcado, então...
+		if (inputs_obj[i].type === 'checkbox' && inputs_obj[i].checked === true) {
+			// incremente o contador e adicione o valor dele na URL.
+			preenchidas++;
+			url = url + ',\'' + inputs_obj[i].value + '\'';
+		}
+	}
 
+	if (preenchidas > 0) {
+		// tira a primeira vírgula
+		url = url.substr(1);
 
- <NOFRAMES>
+		// coloca as opções escolhidas na URL do Google Fusion Tables
+		fusion_url = fusion_url.replace('CARACTERISTICAS',url);
 
-(...)
+		// faz com que o iframe carregue a URL montada.
+		document.getElementById('mapa').src = fusion_url;
 
-</NOFRAMES>
-</frameset>
+		// teste
+		//alert (fusion_url);
+	} else {
+		alert ('É necessário escolher ao menos uma característica para exibir o mapa.');
+	}
+}
 
+			</script>
+
+			<input type="button" value="Atualiza Mapa" onclick="javascript:checkbox_test()" />
+		</form>
+	</aside>
+
+	<article>
+		<iframe id="mapa" src="https://www.google.com/fusiontables/embedviz?viz=MAP&q=select+col2+from+3139225+where+col4+in+('Ciclovia','Ciclofaixa','Faixa+Compartilhada','Via+Proibida','Aluguel+de+Bicicleta','Bicicletario','Bomba+de+Ar','Chuveiro','Oficina+de+Bicicleta')&h=false&lat=-22.93949546286523&lng=-43.34304013427737&z=11&t=1&l=col2"></iframe>
+	</article>
+</body>
 
 </html>
