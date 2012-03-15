@@ -1,23 +1,81 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 <body>
-<b><font size=5 color = black>Filtros</font></b>
-<hr>
-</th>
-<th>
+	<aside>
+		<h2>Filtros</h2>
 
-<input type="checkbox" checked name="Aluguel" value="Aluguel"> Aluguel de Bicicleta  <img src="imagens/aluguel.jpg"><br><br>
-<input type="checkbox" checked name="Bicicletario" value="Bicicletario"> Bicicletario  <img src="imagens/bicicletario.jpg"><br><br>
-<input type="checkbox" checked name="Bomba" value="Bomba"> Bomba de Ar  <img src="imagens/bomba.jpg"><br><br>
-<input type="checkbox" checked name="Chuveiro" value="Chuveiro"> Chuveiro  <img src="imagens/chuveiro.jpg"><br><br>
-<input type="checkbox" checked name="Ciclovia" value="Ciclovia"> Ciclovia / Faixa <img src="imagens/ciclovia.jpg"><br><br>
-<input type="checkbox" checked name="Oficina" value="Oficina"> Oficina de Bicicleta  <img src="imagens/oficina.jpg"><br><br>
-<input type="checkbox" checked name="Proibida" value="Proibida"> Via Proibida <img src="imagens/proibida.jpg"><br><br>
+		<form name="checkboxes">
+			<ul class="checkboxes">
+				<li>
+					<input type="checkbox" checked="checked" id="ciclovia" name="opcoes" value="Ciclovia" />
+					<label for="ciclovia" id="label-ciclovia" class="linha">Ciclovia</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="ciclofaixa" name="opcoes" value="Ciclofaixa" />
+					<label for="ciclovia" id="label-ciclofaixa" class="linha">Ciclofaixa</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="faixa-compartilhada" name="opcoes" value="Faixa+Compartilhada" />
+					<label for="ciclovia" id="label-compartilhada" class="linha">Faixa Compartilhada</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="proibida" name="opcoes" value="Via+Proibida" />
+					<label for="proibida" id="label-proibida" class="linha">Via Proibida</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="aluguel" name="opcoes" value="Aluguel+de+Bicicleta" />
+					<label for="ciclovia" id="label-aluguel" class="ponto">Aluguel de Bicicleta</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="bicicletario" name="opcoes" value="Bicicletario" />
+					<label for="ciclovia" id="label-bicicletario" class="ponto">Bicicletário</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="bomba" name="opcoes" value="Bomba+de+Ar" />
+					<label for="ciclovia" id="label-bomba" class="ponto">Bomba de Ar</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="chuveiro" name="opcoes" value="Chuveiro" />
+					<label for="ciclovia" id="label-chuveiro" class="ponto">Chuveiro</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="oficina" name="opcoes" value="Oficina+de+Bicicleta" />
+					<label for="oficina" id="label-oficina" class="ponto">Lojas e Oficinas</label>
+				</li>
+			</ul>
 
-<input type="submit" value="Atualiza Mapa"> 
+			<script src="atualiza-mapa.js"></script>
 
-</th>
+			<input type="button" value="Todos" onclick="javascript:checkAll(document.checkboxes.opcoes)" />
 
-</tr>
-</table>
+			<input type="button" value="Nenhum" onclick="javascript:uncheckAll(document.checkboxes.opcoes)" />
+
+			<input type="button" value="Atualiza Mapa" onclick="javascript:atualiza_mapa()" />
+
+			<p>Este mapa é uma iniciativa da <a href="http://ta.org.br/">Transporte Ativo</a> e dos seguintes colaboradores:</p>
+
+			<ul class="colaborators">
+				<li><a href="http://nighto.net/">Arlindo Pereira</a></li>
+				<li>Eduardo Rodrigues</li>
+				<li>Giuseppe Zani</li>
+				<li>João Lacerda</li>
+				<li>Leonardo Nunes</li>
+				<li>Leo Novarino</li>
+				<li>Lucas Pavel</li>
+				<li><a href="http://nitbikers.wordpress.com/">Marcos Cavalcanti</a></li>
+				<li><a href="https://play.google.com/store/apps/details?id=serrao.rio.de.bike">Marcos Serrão</a></li>
+				<li><a href="http://www.avidadebicicleta.com/">Robson Combat</a></li>
+				<li>Rodrigo Abreu</li>
+				<li><a href="http://ta.org.br/">Ze Lobo</a></li>
+			</ul>
+
+			<p>Gostaria de colaborar também? <a href="http://transporteativo.org.br/wp/2012/03/08/mapa-cicloviario-unificado-do-rio-de-janeiro/">Clique aqui</a>.</p>
+		</form>
+	</aside>
 </body>
 </html>

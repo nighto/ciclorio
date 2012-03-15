@@ -1,5 +1,6 @@
 body {
 	font-family: sans-serif;
+	margin: 0; padding: 0; border: 0;
 }
 
 ul, li {
@@ -10,27 +11,13 @@ ul, li {
 h1 {
 	background: url('imagens/logo_ta.jpg') no-repeat;
 	height: 56px;
+	margin: 0;
 	padding: 10px 0 0 120px;
 	font-size: 24pt;
 }
 
-aside {
-	float: left;
-	width: 20%;
-}
-
 h2 {
 	margin: 0 0 10px 0;
-}
-
-article {
-	margin: 0 0 0 200px;
-	height: 100%;
-}
-
-#mapa {
-	width: 90%;
-	height:80%;
 }
 
 #label-ciclovia		{ background-image: url('imagens/ciclovia.png');	}
@@ -57,7 +44,7 @@ label.ponto {
 
 label {
 	background-repeat: no-repeat;
-	padding: 0 0 0 35px;
+	padding: 0 0 0 30px;
 }
 
 ul.colaborators {

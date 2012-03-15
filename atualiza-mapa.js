@@ -26,8 +26,19 @@ function atualiza_mapa() {
 		fusion_url = fusion_url.replace('CARACTERISTICAS',caracteristicas);
 
 		// faz com que o iframe carregue a URL montada.
-		document.getElementById('mapa').src = fusion_url;
+		//document.getElementById('mapa').src = fusion_url;
+		parent.mapa.location = fusion_url;
 	} else {
 		alert ('É necessário escolher ao menos uma característica para exibir o mapa.');
 	}
+}
+
+function checkAll(field) {
+	for (i = 0; i < field.length; i++)
+		field[i].checked = true;
+}
+
+function uncheckAll(field) {
+	for (i = 0; i < field.length; i++)
+		field[i].checked = false;
 }
