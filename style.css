@@ -16,6 +16,10 @@ h1 {
 	font-size: 24pt;
 }
 
+header img {
+	float: right;
+}
+
 h2 {
 	margin: 0 0 10px 0;
 }
