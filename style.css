@@ -13,6 +13,10 @@ body.cabecalho {
 	padding: 10px 20px 0 0;
 }
 
+a {
+	color: black;
+}
+
 hgroup {
 	float: right;
 	text-align: right;
@@ -69,4 +73,23 @@ label {
 
 ul.colaborators {
 	font-size: 12px;
+}
+
+/* Páginas Internas */
+body.innerPage {
+	background:url('imagens/fundo.jpg');
+	padding: 20px 50px;
+	text-align: center;
+}
+
+body.innerPage h1 {
+	font-size: 16px;
+}
+
+body.innerPage p.back {
+	text-align: left;
+}
+
+body.innerPage table {
+	margin: 0 auto;
 }

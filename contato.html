@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+	<title>Contato</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<script language="JavaScript">
+	<!--
+	function valida(){ 
+	if (document.form.nome.value==""){
+		alert("Por favor, preencha o campo Nome Completo.");
+		form.nome.focus();
+	}
+	if (document.form.email.value==""){
+		alert("Por favor, preencha o campo E-mail.");
+		form.email.focus();
+	}
+	if (document.form.assunto.value==""){
+		alert("Por favor, preencha o campo Assunto.");
+		form.assunto.focus();
+	}
+	if (document.form.comentarios.value==""){
+		alert("Por favor, escreva uma mensagem.");
+		form.comentarios.focus();
+	}
+	else
+		document.form.submit();
+	}
+	// -->
+	</script>
+
+</head>
+<body class="innerPage">
+	<h1>Contato</h1>
+		<table border="0" cellspacing="0" cellpadding="0">
+			<form name="form" method="post" action="http://www18.locaweb.com.br/scripts/FormMail.pl">
+				<input type=HIDDEN name="recipient" value="contato@ta.org.br">
+				<input type=HIDDEN name="redirect" value="http://www.ta.org.br/site/resposta.htm">
+				<input type=HIDDEN name="subject" value="Transporte Ativo - Contato">
+				<tr>
+					<td width="101" height="27" align="right" class="textobold">Nome Completo*:</td>
+					<td class="textobold" align="right" width="10" height="27">&nbsp;</td>
+					<td width="229" height="27">
+						<input type="text" name="nome" size="44" class="combo">
+					</td>
+					<td width="30">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="textobold" align="right" height="27">E-Mail*:</td>
+					<td class="textobold" align="right" width="10" height="27">&nbsp;</td>
+					<td height="27">
+						<input type="text" name="email" size="44" class="combo"> 
+					</td>
+					<td width="30">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="textobold" align="right" height="27">Estado:</td>
+					<td class="textobold" align="right" height="27">&nbsp;</td>
+					<td height="27">
+						<select name="estado" class="combo">
+							<option>- -</option>
+							<option value="AC">AC</option>
+							<option value="AL">AL</option>
+							<option value="AM">AM</option>
+							<option value="AP">AP</option>
+							<option value="BA">BA</option>
+							<option value="CE">CE</option>
+							<option value="DF">DF</option>
+							<option value="ES">ES</option>
+							<option value="GO">GO</option>
+							<option value="MA">MA</option>
+							<option value="MS">MS</option>
+							<option value="MT">MT</option>
+							<option value="MG">MG</option>
+							<option value="PA">PA</option>
+							<option value="PB">PB</option>
+							<option value="PE">PE</option>
+							<option value="PI">PI</option>
+							<option value="PR">PR</option>
+							<option value="RJ">RJ</option>
+							<option value="RN">RN</option>
+							<option value="RO">RO</option>
+							<option value="RR">RR</option>
+							<option value="RS">RS</option>
+							<option value="SC">SC</option>
+							<option value="SP">SP</option>
+							<option value="SE">SE</option>
+							<option value="TO">TO</option>
+						</select>
+					</td>
+					<td width="30">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="textobold" align="right" height="27">Categoria*:</td>
+					<td class="textobold" align="right" width="10" height="27">&nbsp;</td>
+					<td height="27"> 
+						<select name="categoria" class="combo" id="categoria">
+							<option>Escolha uma categoria</option>
+							<option value="Contribui&ccedil;&otilde;es">Contribui&ccedil;&otilde;es</option>
+							<option value="Doa&ccedil;&otilde;es">Doa&ccedil;&otilde;es</option>
+							<option value="Parcerias">Parcerias</option>
+							<option value="Associar">Associar</option>
+							<option value="Boletim Informativo">Boletim Informativo</option>
+							<option value="Voluntariado">Voluntariado</option>
+							<option value="Programa / Projetos">Programa / Projetos</option>
+							<option value="Mais Informa&ccedil;&otilde;es">Mais Informa&ccedil;&otilde;es</option>
+							<option value="Informa&ccedil;&otilde;es sobre o site">Informa&ccedil;&otilde;es 
+							sobre o site</option>
+							<option value="Outros">Outros</option>
+						</select>
+					</td>
+					<td width="30">&nbsp;</td>
+				</tr>
+				<tr> 
+					<td class="textobold" align="right" height="28">Assunto*:</td>
+					<td class="textobold" align="right" width="10" height="28">&nbsp;</td>
+					<td height="28">
+						<input type="text" name="assunto" size="44" class="combo"> 
+					</td>
+					<td width="30">&nbsp;</td>
+				</tr>
+				<tr> 
+					<td class="texto" align="right" height="5"><img src="IMG/pixel.gif" width="1" height="1"></td>
+					<td class="texto" align="right" width="10" height="5"><img src="IMG/pixel.gif" width="1" height="1"></td>
+					<td class="textobold" align="right" height="27">&nbsp;</td>
+					<td height="27">&nbsp; </td>
+				</tr>
+				<tr> 
+					<td class="textobold" align="right" valign="top"> <p>Mensagem*:</p></td>
+					<td class="textobold" align="right" width="10">&nbsp;</td>
+					<td>
+						<textarea name="comentarios" cols="43" rows="10" class="combo"></textarea> 
+					</td>
+					<td width="30">&nbsp;</td>
+				</tr>
+				<tr> 
+				<td class="textobold" align="right" valign="top">&nbsp;</td>
+				<td class="textobold" align="right" width="10">&nbsp;</td>
+				<td height="45" align="right" valign="bottom"> <p> 
+				    <button class="button" onClick="javascript:valida();">&nbsp;&nbsp;&nbsp;Enviar&nbsp;&nbsp;&nbsp;</button>
+				    &nbsp;&nbsp;&nbsp; 
+				    <button class="button" onClick="javascript:document.form.reset();">&nbsp;&nbsp;Limpar&nbsp;&nbsp;</button>
+				  </p></td>
+				<td width="30" valign="bottom">&nbsp;</td>
+				</tr>
+			</form>
+		</table>
+	<p class="back"><a href="index.html" target="_parent">← Voltar para o mapa</a></p>
+</body>
+</html>
