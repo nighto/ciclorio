@@ -1,8 +1,17 @@
+// Altere essas variáveis para as utilizadas pela sua Fusion Table
+var FUSION_TABLE_ID = '3139225';      // ID da Fusion Table utilizada
+var LATITUDE = '-22.93949546286523';  // latitude,
+var LONGITUDE = '-43.34304013427737'; // longitude e
+var ZOOM = '11';                      // nível de zoom iniciais da visualização do mapa
+var GEO_COLUMN = '2';                 // número da coluna com as informações geográficas, começando do zero
+var QUERY_COLUMN = '4';               // número da coluna com as informações a serem filtradas, idem
+// ou seja, terceira e quinta coluna respectivamente. Não precisa alterar nada daqui pra baixo.
+
 function atualiza_mapa() {
 	var preenchidas = 0,		// conta quantas checkboxes foram preenchidas
 		i = 0,					// contador do loop
 		caracteristicas = '',	// variável que armazenará a URL final do mapa
-		fusion_url = 'https://www.google.com/fusiontables/embedviz?viz=MAP&q=select+col2+from+3139225+where+col4+in+(CARACTERISTICAS)&h=false&lat=-22.93949546286523&lng=-43.34304013427737&z=11&t=1&l=col2',
+		fusion_url = 'https://www.google.com/fusiontables/embedviz?viz=MAP&q=select+col' + GEO_COLUMN + '+from+' + FUSION_TABLE_ID + '+where+col' + QUERY_COLUMN + '+in+(CARACTERISTICAS)&h=false&lat=' + LATITUDE + '&lng=' + LONGITUDE + '&z=' + ZOOM + '&t=1&l=col' + GEO_COLUMN;
 
 		// cria um array com todos os inputs da página
 		inputs_obj = document.getElementsByTagName('input');
