@@ -26,7 +26,7 @@ function initializeMap(){
         var radius = e.accuracy / 2;
 
         L.marker(e.latlng).addTo(map)
-            .bindPopup("Você está num raio de " + radius + " metros deste ponto").openPopup();
+            .bindPopup("Você está num raio de " + ~~radius + " metros deste ponto").openPopup();
 
         L.circle(e.latlng, radius).addTo(map);
     }
