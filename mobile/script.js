@@ -92,29 +92,50 @@ function loadMapData(){
 };
 
 function processMapData(mapData){
-    var biciPublica = [];
+    // defining arrays to store the correspondent points
+    var biciPublica  = [];
     var bicicletario = [];
-    var oficina = [];
+    var oficina      = [];
+    var bombaDeAr    = [];
+    var chuveiro     = [];
     
     for(var i=0, len=mapData.rows.length; i<len; i++){
-        if(mapData.rows[i][4] == "Bicicleta Publica")
-            biciPublica.push(mapData.rows[i]);
-        else if(mapData.rows[i][4] == "Bicicletario")
-            bicicletario.push(mapData.rows[i]);
-        else if(mapData.rows[i][4] == "Oficina de Bicicleta")
-            oficina.push(mapData.rows[i]);
+        var category;
+
+        switch(mapData.rows[i][4]){ // column with the type
+            case "Bicicleta Publica":
+                category = biciPublica;  break;
+            case "Bicicletario":
+                category = bicicletario; break;
+            case "Oficina de Bicicleta":
+                category = oficina;      break;
+            case "Bomba de Ar":
+                category = bombaDeAr;    break;
+            case "Chuveiro":
+                category = chuveiro;     break;
+        }
+
+        if( category !== undefined )
+            category.push(mapData.rows[i]); // add to the given category array the point array
     }
 
+    // defining layers with the pins and their colors
     var lBiciPublica  = addPins(biciPublica,  'orange');
     var lBicicletario = addPins(bicicletario, 'red');
     var lOficina      = addPins(oficina,      'blue');
+    var lBombaDeAr    = addPins(bombaDeAr,    'green');
+    var lChuveiro     = addPins(chuveiro,     'pink');
 
+    // adding them to the list of layers
     var overlayMaps = {
         "Bicicletas Públicas":   lBiciPublica,
         "Bicicletários":         lBicicletario,
-        "Oficinas de Bicicleta": lOficina
+        "Oficinas de Bicicleta": lOficina,
+        "Bomba de Ar":           lBombaDeAr,
+        "Chuveiro":              lChuveiro
     };
 
+    // and adding the list to map
     L.control.layers(null, overlayMaps).addTo(map);
 };
 
