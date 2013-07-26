@@ -1,6 +1,8 @@
 var CloudMade_API_key = "ea7350f1880845eabc4585641710ea28";
 var Google_API_key = "AIzaSyCreptOWN3UAF4LdXLNt6XzMuPAbEciJH0";
 var GFTable = "1PJXmib36JCeDRrWiemp9v6dsNuL2MU4cD3kz8QY";
+var initialLatLon = [-22.941,-43.396];
+var initialZoomLevel = 11;
 var mapData,     // object containing JSON response from Google Fusion Tables
     old_update,  // UTC date string of last update to compare with current one
     map,         // the leaflet map instance
@@ -14,7 +16,7 @@ $(document).ready(function(){
 function initializeMap(){
 
     // initializing map zoomed out on the whole city
-    map = L.map('map').setView([-22.941,-43.396], 11);
+    map = L.map('map').setView(initialLatLon, initialZoomLevel);
 
     L.tileLayer('http://{s}.tile.cloudmade.com/'+CloudMade_API_key+'/997/256/{z}/{x}/{y}.png', {
         maxZoom: 18,
@@ -38,7 +40,7 @@ function initializeMap(){
     map.on('locationfound', onLocationFound);
     map.on('locationerror', onLocationError);
 
-    map.locate({setView: true, maxZoom: 16});
+    map.locate({setView: true, maxZoom: 16}); // don't get too close
 
     // defining map icon
     BicycleIcon = L.Icon.extend({
@@ -47,8 +49,8 @@ function initializeMap(){
             iconSize:     [32, 37], // size of the icon
             shadowSize:   [51, 37], // size of the shadow
             iconAnchor:   [16, 34], // point of the icon which will correspond to marker's location
-            shadowAnchor: [25, 36],  // the same for the shadow
-            popupAnchor:  [0, -16] // point from which the popup should open relative to the iconAnchor
+            shadowAnchor: [25, 36], // the same for the shadow
+            popupAnchor:  [0, -16]  // point from which the popup should open relative to the iconAnchor
         }
     });
 };
