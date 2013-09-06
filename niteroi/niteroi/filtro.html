@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59018-22']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+	</script>
+</head>
+<body>
+	<aside>
+		<h3>Filtros</h3>
+
+		<form name="checkboxes">
+			<ul class="checkboxes">
+				<li>
+					<input type="checkbox" checked="checked" id="ciclovia" name="opcoes" value="Ciclovia" />
+					<label for="ciclovia" id="label-ciclovia" class="linha" title="Pistas exclusivas para bicicletas separadas do tráfego normal por meio-fio. Geralmente ocupam as bordas (orla da praia, muro da linha do trem, canteiro central), afim de evitar cruzamentos.">Ciclovia</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="ciclofaixa" name="opcoes" value="Ciclofaixa" />
+					<label for="ciclofaixa" id="label-ciclofaixa" class="linha" title="Faixas exclusivas para bicicletas sinalizadas nas vias normais, usualmente separadas por tachões.">Ciclofaixa</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="faixa-compartilhada" name="opcoes" value="Faixa+Compartilhada" />
+					<label for="faixa-compartilhada" id="label-faixa-compartilhada" class="linha" title="São as pistas exclusivas para pedestres nas quais os ciclistas são oficialmente tolerados, como a Lagoa Rodrigo de Freitas e o Aterro do Flamengo. São bastante semelhantes às ciclovas, a diferença é que aqui a prioridade é sempre do pedestre.">Calçada Compartilhada</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="via-compartilhada" name="opcoes" value="Via+Compartilhada" />
+					<label for="via-compartilhada" id="label-via-compartilhada" class="linha" title="São vias compartilhadas entre motoristas e ciclistas, com indicações de velocidade máxima compatível (máximo de 30km/h). Não contam com divisões físicas como tachões, apenas pintura e sinalização.">Via Compartilhada</label>
+				</li>
+				<li>
+					<input type="checkbox" id="via-proibida" name="opcoes" value="Via+Proibida" />
+					<label for="via-proibida" id="label-via-proibida" class="linha" title="São as vias com a placa R-12 (proibido bicicletas). Em geral também é proibido o tráfego de pedestres. Exemplos: Ponte Rio-Niterói, Linha Vermelha etc.">Via Proibida</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="aluguel" name="opcoes" value="Bicicleta+Publica" />
+					<label for="aluguel" id="label-aluguel" class="ponto" title="Estações de bicicletas públicas do BikeRio.">Bicicletas Públicas</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="bicicletario" name="opcoes" value="Bicicletario" />
+					<label for="bicicletario" id="label-bicicletario" class="ponto" title="Locais para prender a bicicleta. Engloba tanto os paraciclos (estruturas na rua, sem proteção, como os da orla da praia) quanto bicicletários de estabelecimentos. Mencionamos o horário de funcionamento, se for o caso.">Bicicletário</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="bomba" name="opcoes" value="Bomba+de+Ar" />
+					<label for="bomba" id="label-bomba" class="ponto" title="Postos de gasolina que contam com bomba de ar para encher os pneus de bicicletas.">Bomba de Ar</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="chuveiro" name="opcoes" value="Chuveiro" />
+					<label for="chuveiro" id="label-chuveiro" class="ponto" title="Postos na praia em que é possível tomar um banho. Não inclui academias, salvo se elas oferecem esse serviço à comunidade ciclística.">Chuveiro</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="oficina" name="opcoes" value="Oficina+de+Bicicleta" />
+					<label for="oficina" id="label-oficina" class="ponto" title="Estabelecimentos que trabalham com bicicletas, tanto os que só vendem, quanto os que só consertam, como a grande maioria que oferecem os dois serviços.">Lojas e Oficinas</label>
+				</li>
+			</ul>
+
+			<script src="atualiza-mapa.js"></script>
+
+			<input type="button" value="Todos" onclick="javascript:checkAll(document.checkboxes.opcoes)" />
+
+			<input type="button" value="Nenhum" onclick="javascript:uncheckAll(document.checkboxes.opcoes)" />
+
+			<input type="button" value="Atualiza Mapa" onclick="javascript:atualiza_mapa()" />
+
+			<p>Patrocínio:</p>
+
+			<p style="text-align: center;"><a href="http://www.itau.com.br/sustentabilidade" target="_blank"><img src="imagens/itau.png" alt="Itaú"></a></p>
+
+			<ul>
+				<li><a href="sobre.html" target="mapa">Sobre o Mapa</a></li>
+				<li><a href="contribuir.html" target="mapa">Como Contribuir</a></li>
+				<li><a href="docs/Guia_Utilizacao.pdf" target="_blank">Guia de Utilização</a></li>
+				<li><a href="http://www.ta.org.br/site/pop17.htm" target="mapa">Aplicativo Android</a></li>
+				<li><a href="contato.html" target="mapa">Entre em contato</a></li>
+			</ul>
+		</form>
+	</aside>
+</body>
+</html>

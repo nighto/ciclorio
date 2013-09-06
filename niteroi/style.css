@@ -1,0 +1,95 @@
+body {
+	font-family: sans-serif;
+	margin: 0; padding: 5px; border: 0;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+body.cabecalho {
+	background: url('imagens/logo_ta.jpg') no-repeat 5px 5px;
+	padding: 10px 20px 0 0;
+}
+
+a {
+	color: black;
+}
+
+hgroup {
+	float: right;
+	text-align: right;
+}
+
+h1,h2 {
+	margin: 0;
+}
+
+h1 {
+	font-size: 24pt;
+}
+
+h2 {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+h2 a {
+	font-weight: bold;
+}
+
+h3 {
+	margin: 0 0 10px 0;
+}
+
+#label-ciclovia				{ background-image: url('imagens/ciclovia.png');		}
+#label-ciclofaixa			{ background-image: url('imagens/ciclofaixa.png');		}
+#label-faixa-compartilhada	{ background-image: url('imagens/compartilhada.png')	}
+#label-via-compartilhada	{ background-image: url('imagens/zona30.png')	}
+#label-via-proibida			{ background-image: url('imagens/via-proibida.png');	}
+#label-aluguel				{ background-image: url('imagens/aluguel.jpg');  		}
+#label-bicicletario			{ background-image: url('imagens/bicicletario.jpg');	}
+#label-bomba				{ background-image: url('imagens/bomba.jpg');			}
+#label-chuveiro				{ background-image: url('imagens/chuveiro.jpg');		}
+#label-oficina				{ background-image: url('imagens/oficina.jpg');			}
+
+form ul.checkboxes li {
+	height: 24px;
+}
+
+label.linha {
+	padding-bottom: 5px;
+}
+
+label.ponto {
+	background-position: 6px 0;
+}
+
+label {
+	background-repeat: no-repeat;
+	padding: 0 0 0 30px;
+}
+
+ul.colaborators {
+	font-size: 12px;
+}
+
+/* Páginas Internas */
+body.innerPage {
+	background:url('imagens/fundo.jpg');
+	padding: 20px 50px;
+	text-align: center;
+}
+
+body.innerPage h1 {
+	font-size: 16px;
+}
+
+body.innerPage p.back {
+	text-align: left;
+}
+
+body.innerPage table {
+	margin: 0 auto;
+}
