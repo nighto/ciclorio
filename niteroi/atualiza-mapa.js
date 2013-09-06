@@ -1,8 +1,8 @@
 // Altere essas variáveis para as utilizadas pela sua Fusion Table
 var FUSION_TABLE_ID = '3139225';  // ID da Fusion Table utilizada
-var LATITUDE = '-22.9142';        // latitude,
-var LONGITUDE = '-43.0552';       // longitude e
-var ZOOM = '13';                  // nível de zoom iniciais da visualização do mapa
+var LATITUDE = '-22.8825';        // latitude,
+var LONGITUDE = '-43.1164';       // longitude e
+var ZOOM = '12';                  // nível de zoom iniciais da visualização do mapa
 var GEO_COLUMN = '2';             // número da coluna com as informações geográficas, começando do zero
 var QUERY_COLUMN = '4';           // número da coluna com as informações a serem filtradas, idem
 // ou seja, terceira e quinta coluna respectivamente. Não precisa alterar nada daqui pra baixo.
