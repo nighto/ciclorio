@@ -27,10 +27,12 @@ function initializeMap(){
     function onLocationFound(e) {
         var radius = e.accuracy / 2;
 
-        L.marker(e.latlng).addTo(map)
-            .bindPopup("Você está num raio de " + ~~radius + " metros deste ponto").openPopup();
+        if(radius < 1000){
+            L.marker(e.latlng).addTo(map)
+                .bindPopup("Você está num raio de " + ~~radius + " metros deste ponto").openPopup();
 
-        L.circle(e.latlng, radius).addTo(map);
+            L.circle(e.latlng, radius).addTo(map);
+        }
     }
 
     function onLocationError(e) {
