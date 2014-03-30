@@ -42,6 +42,10 @@
 					<label for="via-compartilhada" id="label-via-compartilhada" class="linha" title="São vias compartilhadas entre motoristas e ciclistas, com indicações de velocidade máxima compatível (máximo de 30km/h). Não contam com divisões físicas como tachões, apenas pintura e sinalização.">Via Compartilhada</label>
 				</li>
 				<li>
+					<input type="checkbox" checked="checked" id="todas-as-vias" name="opcoes" value="" onclick="manageAllWaysCheckbox()" />
+					<label for="todas-as-vias" id="label-todas-as-vias" class="linha" title="Exibe ou oculta todas as vias cicláveis">Todas as vias cicláveis</label>
+				</li>
+				<li>
 					<input type="checkbox" id="via-proibida" name="opcoes" value="Via+Proibida" />
 					<label for="via-proibida" id="label-via-proibida" class="linha" title="São as vias com a placa R-12 (proibido bicicletas). Em geral também é proibido o tráfego de pedestres. Exemplos: Ponte Rio-Niterói, Linha Vermelha etc.">Via Proibida</label>
 				</li>
@@ -54,24 +58,16 @@
 					<label for="bicicletario" id="label-bicicletario" class="ponto" title="Locais para prender a bicicleta. Engloba tanto os paraciclos (estruturas na rua, sem proteção, como os da orla da praia) quanto bicicletários de estabelecimentos. Mencionamos o horário de funcionamento, se for o caso.">Bicicletário</label>
 				</li>
 				<li>
-					<input type="checkbox" checked="checked" id="bomba" name="opcoes" value="Bomba+de+Ar" />
-					<label for="bomba" id="label-bomba" class="ponto" title="Postos de gasolina que contam com bomba de ar para encher os pneus de bicicletas.">Bomba de Ar</label>
-				</li>
-				<li>
-					<input type="checkbox" checked="checked" id="chuveiro" name="opcoes" value="Chuveiro" />
-					<label for="chuveiro" id="label-chuveiro" class="ponto" title="Postos na praia em que é possível tomar um banho. Não inclui academias, salvo se elas oferecem esse serviço à comunidade ciclística.">Chuveiro</label>
-				</li>
-				<li>
 					<input type="checkbox" checked="checked" id="oficina" name="opcoes" value="Oficina+de+Bicicleta" />
 					<label for="oficina" id="label-oficina" class="ponto" title="Estabelecimentos que trabalham com bicicletas, tanto os que só vendem, quanto os que só consertam, como a grande maioria que oferecem os dois serviços.">Lojas e Oficinas</label>
+				</li>
+				<li>
+					<input type="checkbox" checked="checked" id="todos-os-pontos" name="opcoes" value="" onclick="manageAllPointsCheckbox()" />
+					<label for="todos-os-pontos" id="label-todos-os-pontos" class="linha" title="Exibe ou oculta todos os pontos">Todos os pontos</label>
 				</li>
 			</ul>
 
 			<script src="atualiza-mapa.js"></script>
-
-			<input type="button" value="Todos" onclick="javascript:checkAll(document.checkboxes.opcoes)" />
-
-			<input type="button" value="Nenhum" onclick="javascript:uncheckAll(document.checkboxes.opcoes)" />
 
 			<input type="button" value="Atualiza Mapa" onclick="javascript:atualiza_mapa()" />
 

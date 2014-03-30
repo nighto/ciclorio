@@ -19,7 +19,9 @@ function atualiza_mapa() {
 	// percorre todos os inputs coletados
 	for (i = 0; i < inputs_obj.length; i++) {
 		// se é um checkbox e está marcado, então...
-		if (inputs_obj[i].type === 'checkbox' && inputs_obj[i].checked === true) {
+		if (inputs_obj[i].type === 'checkbox' &&
+			inputs_obj[i].checked === true &&
+			inputs_obj[i].value !== '') {
 			// incremente o contador e adicione o valor dele na URL.
 			preenchidas++;
 			caracteristicas = caracteristicas + ',\'' + inputs_obj[i].value + '\''; 
@@ -42,12 +44,24 @@ function atualiza_mapa() {
 	}
 }
 
-function checkAll(field) {
-	for (i = 0; i < field.length; i++)
-		field[i].checked = true;
+function manageAllWaysCheckbox(){
+	var todas_as_vias       = document.getElementById('todas-as-vias'),
+		ciclovia            = document.getElementById('ciclovia'),
+		ciclofaixa          = document.getElementById('ciclofaixa'),
+		faixa_compartilhada = document.getElementById('faixa-compartilhada'),
+		via_compartilhada   = document.getElementById('via-compartilhada');
+
+	ciclovia.checked            =
+	ciclofaixa.checked          =
+	faixa_compartilhada.checked =
+	via_compartilhada.checked   = todas_as_vias.checked;
 }
 
-function uncheckAll(field) {
-	for (i = 0; i < field.length; i++)
-		field[i].checked = false;
+function manageAllPointsCheckbox(){
+	var todos_os_pontos = document.getElementById('todos-os-pontos'),
+		aluguel         = document.getElementById('aluguel'),
+		bicicletario    = document.getElementById('bicicletario'),
+		oficina         = document.getElementById('oficina');
+
+	aluguel.checked = bicicletario.checked = oficina.checked = todos_os_pontos.checked;
 }
