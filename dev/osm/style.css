@@ -1,2 +1,2 @@
-#nodeId { width: 70px; }
-#lonlatalt { width: 420px; }
+#nodeId, #wayId { width: 70px; }
+#lonlatalt, #wayKml { width: 420px; }
