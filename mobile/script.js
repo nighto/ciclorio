@@ -154,8 +154,11 @@ function processMapData(mapData){
 };
 
 function addPins(elements, color){
-    // defining an empty array to fill with markers
-    var markerArray = [];
+    var markerLayer = new L.ConditionalMarkers({
+        minZoomShow: 11,
+        viewportPadding: 0.0
+    });
+    markerLayer.addTo(map);
 
     for(var i=0, len=elements.length; i<len; i++){
         var lat   = elements[i][2].geometry.coordinates[1];
@@ -164,12 +167,10 @@ function addPins(elements, color){
         var text  = elements[i][0];
         var popupText = '<b>'+title+'</b><br>'+text;
 
-        // creating a marker for every point and pushing to the array
-        markerArray.push( L.marker( [lat, lon], {icon: bicycleColors[color]} ).bindPopup(popupText) );
+        markerLayer.addLayer( L.marker( [lat, lon], {icon: bicycleColors[color]} ).bindPopup(popupText) );
     }
 
-    // returns the layer with all markers
-    return L.layerGroup(markerArray);//.addTo(map);
+    return markerLayer;
 }
 
 function addLines(elements, color){
