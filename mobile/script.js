@@ -20,7 +20,7 @@ function initializeMap(){
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
-        attribution: '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://opendatacommons.org/licenses/odbl/">ODbL</a>, Imagens © <a href="http://cloudmade.com">CloudMade</a>; Ícones © <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
+        attribution: '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
     }).addTo(map);
 
     // defining geolocalization functions
