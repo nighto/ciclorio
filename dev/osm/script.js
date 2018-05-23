@@ -5,7 +5,7 @@ $(document).ready(function(){
   // node
   $('#convert').on('click', function(){
     $('#lonlatalt').val('');
-    var nodeUrl = 'http://api.openstreetmap.org/api/0.6/node/' + $('#nodeId').val();
+    var nodeUrl = '//api.openstreetmap.org/api/0.6/node/' + $('#nodeId').val();
     $.get(nodeUrl, function(data){
       var $node = $( $( $(data).children('osm')[0] ).children('node')[0] );
       var lat = parseFloat($node.attr('lat')).toFixed(6);
@@ -18,7 +18,7 @@ $(document).ready(function(){
   $('#convertWay').on('click', function(){
     nodeArr = [];
     $('#wayKml').val('');
-    var wayUrl = 'http://api.openstreetmap.org/api/0.6/way/' + $('#wayId').val();
+    var wayUrl = '//api.openstreetmap.org/api/0.6/way/' + $('#wayId').val();
     $.get(wayUrl, function(data){
       var wayNode = $( $( $(data).children('osm')[0] ).children('way')[0] );
       for(var i=0, len=wayNode[0].children.length; i<len; i++){
@@ -33,7 +33,7 @@ $(document).ready(function(){
 
   function getNodeKMLOnArray(index){
     if(nodeArr[index]){
-      var nodeUrl = 'http://api.openstreetmap.org/api/0.6/node/' + nodeArr[index];
+      var nodeUrl = '//api.openstreetmap.org/api/0.6/node/' + nodeArr[index];
       $.get(nodeUrl, function(data){
         var $node = $($($(data).children('osm')[0]).children('node')[0]);
         var lat = parseFloat($node.attr('lat')).toFixed(6);
