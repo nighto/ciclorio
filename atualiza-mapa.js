@@ -59,7 +59,7 @@ function manageAllWaysCheckbox(){
 
 function manageAllPointsCheckbox(){
 	var todos_os_pontos = document.getElementById('todos-os-pontos'),
-		aluguel         = document.getElementById('aluguel'),
+		// aluguel         = document.getElementById('aluguel'),
 		bicicletario    = document.getElementById('bicicletario'),
 		oficina         = document.getElementById('oficina');
 
