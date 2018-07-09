@@ -63,5 +63,6 @@ function manageAllPointsCheckbox(){
 		bicicletario    = document.getElementById('bicicletario'),
 		oficina         = document.getElementById('oficina');
 
-	aluguel.checked = bicicletario.checked = oficina.checked = todos_os_pontos.checked;
+	//aluguel.checked = 
+	bicicletario.checked = oficina.checked = todos_os_pontos.checked;
 }
