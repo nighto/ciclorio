@@ -59,11 +59,11 @@ function initializeMap() {
 }
 
 function checkLastUpdateMapData() {
-  var DRIVE_URL =
-    "https://www.googleapis.com/drive/v2/files/" +
-    GFTable +
-    "?key=" +
-    Google_API_key;
+  var DRIVE_URL = "checkLastUpdate.json";
+  // "https://www.googleapis.com/drive/v2/files/" +
+  // GFTable +
+  // "?key=" +
+  // Google_API_key;
 
   fetch(DRIVE_URL).then(function(response) {
     response.json().then(function(data) {
@@ -91,12 +91,12 @@ function updateMapData() {
 function loadMapData() {
   var query = "select * from " + GFTable;
   var escapedQuery = query.replace(/ /g, "+");
-  var GFT_URL =
-    "https://www.googleapis.com/fusiontables/v1/query?sql=" +
-    escapedQuery +
-    "&key=" +
-    Google_API_key +
-    "&jsoncallback=";
+  var GFT_URL = "data.json";
+  // "https://www.googleapis.com/fusiontables/v1/query?sql=" +
+  // escapedQuery +
+  // "&key=" +
+  // Google_API_key +
+  // "&jsoncallback=";
 
   console.log("loading map data");
 
@@ -169,7 +169,8 @@ function processMapData(mapData) {
 function addPins(elements, color) {
   var markerLayer = new L.ConditionalMarkers({
     minZoomShow: 11,
-    viewportPadding: 0.0
+    viewportPadding: 0.0,
+    maxMarkers: 100
   });
   markerLayer.addTo(map);
 

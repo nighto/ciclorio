@@ -1,0 +1,69 @@
+{
+  "kind": "drive#file",
+  "id": "1PJXmib36JCeDRrWiemp9v6dsNuL2MU4cD3kz8QY",
+  "etag": "\"zmr-1lPgqoTG5n-JjIpzvWNfaQE/MTUzMTE1MDYwNjU1MQ\"",
+  "selfLink": "https://www.googleapis.com/drive/v2/files/1PJXmib36JCeDRrWiemp9v6dsNuL2MU4cD3kz8QY",
+  "alternateLink": "https://www.google.com/fusiontables/DataSource?docid=1PJXmib36JCeDRrWiemp9v6dsNuL2MU4cD3kz8QY",
+  "embedLink": "https://drive.google.com/file/d/1PJXmib36JCeDRrWiemp9v6dsNuL2MU4cD3kz8QY/preview?usp=drivesdk",
+  "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.fusiontable",
+  "title": "Mapa Cicloviário do Rio de Janeiro",
+  "mimeType": "application/vnd.google-apps.fusiontable",
+  "description": "Mapa Cicloviário do Rio de Janeiro",
+  "labels": {
+    "starred": false,
+    "hidden": false,
+    "trashed": false,
+    "restricted": false,
+    "viewed": false
+  },
+  "copyRequiresWriterPermission": false,
+  "createdDate": "2012-03-05T21:00:45.196Z",
+  "modifiedDate": "2018-07-09T15:36:46.551Z",
+  "markedViewedByMeDate": "1970-01-01T00:00:00.000Z",
+  "version": "26419",
+  "parents": [],
+  "userPermission": {
+    "kind": "drive#permission",
+    "etag": "\"zmr-1lPgqoTG5n-JjIpzvWNfaQE/nP7uCrm1pQY88QVzHTmaNOmD6ik\"",
+    "id": "me",
+    "selfLink": "https://www.googleapis.com/drive/v2/files/1PJXmib36JCeDRrWiemp9v6dsNuL2MU4cD3kz8QY/permissions/me",
+    "role": "reader",
+    "type": "user"
+  },
+  "quotaBytesUsed": "0",
+  "ownerNames": ["Arlindo Pereira"],
+  "owners": [
+    {
+      "kind": "drive#user",
+      "displayName": "Arlindo Pereira",
+      "picture": {
+        "url": "https://lh3.googleusercontent.com/a-/AAuE7mB9WznJ8SJeu4Dmt3b4Cj6kDML2qWy6K50IHEV5VPY=s64"
+      },
+      "isAuthenticatedUser": false,
+      "permissionId": "14060489134949626442",
+      "emailAddress": "arlindosaraivapereira@gmail.com"
+    }
+  ],
+  "lastModifyingUserName": "Arlindo Pereira",
+  "lastModifyingUser": {
+    "kind": "drive#user",
+    "displayName": "Arlindo Pereira",
+    "picture": {
+      "url": "https://lh3.googleusercontent.com/a-/AAuE7mB9WznJ8SJeu4Dmt3b4Cj6kDML2qWy6K50IHEV5VPY=s64"
+    },
+    "isAuthenticatedUser": false,
+    "permissionId": "14060489134949626442",
+    "emailAddress": "arlindosaraivapereira@gmail.com"
+  },
+  "capabilities": {
+    "canCopy": false,
+    "canEdit": false
+  },
+  "editable": false,
+  "copyable": false,
+  "writersCanShare": true,
+  "shared": true,
+  "explicitlyTrashed": false,
+  "appDataContents": false,
+  "spaces": ["drive"]
+}
