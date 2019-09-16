@@ -33,7 +33,7 @@ function initializeMap() {
   }
 
   function onLocationError(e) {
-    alert(e.message);
+    console.log(e.message);
   }
 
   map.on("locationfound", onLocationFound);
