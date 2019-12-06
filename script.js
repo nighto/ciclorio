@@ -1,5 +1,3 @@
-var Google_API_key = "AIzaSyCreptOWN3UAF4LdXLNt6XzMuPAbEciJH0";
-var GFTable = "1PJXmib36JCeDRrWiemp9v6dsNuL2MU4cD3kz8QY";
 var initialLatLon = [-22.941, -43.396];
 var initialZoomLevel = 11;
 var mapData, // object containing JSON response from Google Fusion Tables
@@ -59,11 +57,7 @@ function initializeMap() {
 }
 
 function checkLastUpdateMapData() {
-  var DRIVE_URL = "checkLastUpdate.json";
-  // "https://www.googleapis.com/drive/v2/files/" +
-  // GFTable +
-  // "?key=" +
-  // Google_API_key;
+  var DRIVE_URL = "checkLastUpdate.json"; // formerly Google Drive API URL
 
   fetch(DRIVE_URL).then(function(response) {
     response.json().then(function(data) {
@@ -91,12 +85,7 @@ function updateMapData() {
 function loadMapData() {
   var query = "select * from " + GFTable;
   var escapedQuery = query.replace(/ /g, "+");
-  var GFT_URL = "data.json";
-  // "https://www.googleapis.com/fusiontables/v1/query?sql=" +
-  // escapedQuery +
-  // "&key=" +
-  // Google_API_key +
-  // "&jsoncallback=";
+  var GFT_URL = "data.json"; // formerly Fusion Tables URL
 
   console.log("loading map data");
 
