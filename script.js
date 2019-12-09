@@ -83,8 +83,6 @@ function updateMapData() {
 }
 
 function loadMapData() {
-  var query = "select * from " + GFTable;
-  var escapedQuery = query.replace(/ /g, "+");
   var GFT_URL = "data.json"; // formerly Fusion Tables URL
 
   console.log("loading map data");
