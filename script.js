@@ -19,7 +19,6 @@ function initializeMap() {
     {
       // id: 'mapbox/streets-v11',
       // id: 'mapbox/light-v9',
-      maxZoom: 18,
       attribution:
         '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
   }).addTo(map);
@@ -28,7 +27,11 @@ function initializeMap() {
     console.error(e.message);
   });
 
-  var lc = L.control.locate().addTo(map);
+  var lc = L.control.locate({
+    locateOptions: {
+      maxZoom: 16
+    }
+  }).addTo(map);
   lc.start();
 
   // defining map icon
@@ -120,8 +123,8 @@ function processMapData(mapData) {
   }
 
   // defining layers with the pins and their colors
-  // var lBiciPublica = addPins(biciPublica, "orange");
-  // var lBicicletario = addPins(bicicletario, "red");
+  var lBiciPublica = addPins(biciPublica, "orange");
+  var lBicicletario = addPins(bicicletario, "red");
   var lOficina = addPins(oficina, "blue");
 
   // defining layers with the lines and their colors
@@ -132,8 +135,8 @@ function processMapData(mapData) {
 
   // adding them to the list of layers
   var overlayMaps = {
-    // "Bicicletas Públicas": lBiciPublica,
-    // Bicicletários: lBicicletario,
+    "Bicicletas Públicas": lBiciPublica,
+    Bicicletários: lBicicletario,
     "Oficinas de Bicicleta": lOficina,
     Ciclovias: lCiclovia,
     Ciclofaixas: lCiclofaixa,
