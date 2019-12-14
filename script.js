@@ -123,9 +123,9 @@ function processMapData(mapData) {
   }
 
   // defining layers with the pins and their colors
-  var lBiciPublica = addPins(biciPublica, "orange");
-  var lBicicletario = addPins(bicicletario, "red");
-  var lOficina = addPins(oficina, "blue");
+  // var lBiciPublica = addPins(biciPublica, "orange", false);
+  var lBicicletario = addPins(bicicletario, "red", false);
+  var lOficina = addPins(oficina, "blue", false);
 
   // defining layers with the lines and their colors
   var lCiclovia = addLines(ciclovia, "red");
@@ -135,29 +135,23 @@ function processMapData(mapData) {
 
   // adding them to the list of layers
   var overlayMaps = {
-    "Bicicletas Públicas": lBiciPublica,
-    Bicicletários: lBicicletario,
-    "Oficinas de Bicicleta": lOficina,
-    Ciclovias: lCiclovia,
-    Ciclofaixas: lCiclofaixa,
+    "Ciclovias": lCiclovia,
+    "Ciclofaixas": lCiclofaixa,
     "Calçadas Compartilhadas": lCalcadaCompartilhada,
-    "Vias Compartilhadas": lViaCompartilhada
+    "Vias Compartilhadas<hr>": lViaCompartilhada,
+    // "Bicicletas Públicas": lBiciPublica,
+    "Bicicletários": lBicicletario,
+    "Oficinas de Bicicleta": lOficina
   };
 
   // and adding the list to map
   L.control.layers(null, overlayMaps, {
-    collapsed: false,
-
+    collapsed: false
   }).addTo(map);
 }
 
-function addPins(elements, color) {
-  var markerLayer = new L.ConditionalMarkers({
-    minZoomShow: 11,
-    viewportPadding: 0.0,
-    maxMarkers: 100
-  });
-  markerLayer.addTo(map);
+function addPins(elements, color, isDefault=true) {
+  var markerLayer = L.layerGroup();
 
   for (var i = 0, len = elements.length; i < len; i++) {
     var lat = elements[i][2].geometry.coordinates[1];
@@ -171,10 +165,14 @@ function addPins(elements, color) {
     );
   }
 
+  if (isDefault) {
+    markerLayer.addTo(map)
+  }
+
   return markerLayer;
 }
 
-function addLines(elements, color) {
+function addLines(elements, color, isDefault=true) {
   var linesArray = [];
 
   for (var i = 0, li = elements.length; i < li; i++) {
@@ -199,7 +197,11 @@ function addLines(elements, color) {
 
   console.log(color, linesArray);
 
-  return L.layerGroup(linesArray).addTo(map);
+  if (isDefault) {
+    return L.layerGroup(linesArray).addTo(map);
+  } else {
+    return L.layerGroup(linesArray);
+  }
 }
 
 initializeMap();
