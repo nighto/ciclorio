@@ -10,34 +10,26 @@ function initializeMap() {
   // initializing map zoomed out on the whole city
   map = L.map("map").setView(initialLatLon, initialZoomLevel);
 
-  L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution:
-      '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
+  var mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+  var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
+
+  L.tileLayer(
+    // mapboxUrl,
+    osmUrl,
+    {
+      // id: 'mapbox/streets-v11',
+      // id: 'mapbox/light-v9',
+      maxZoom: 18,
+      attribution:
+        '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
   }).addTo(map);
 
-  // defining geolocalization functions
-  function onLocationFound(e) {
-    var radius = e.accuracy / 2;
+  map.on("locationerror", e => {
+    console.error(e.message);
+  });
 
-    if (radius < 1000) {
-      L.marker(e.latlng)
-        .addTo(map)
-        .bindPopup("Você está num raio de " + ~~radius + " metros deste ponto")
-        .openPopup();
-
-      L.circle(e.latlng, radius).addTo(map);
-    }
-  }
-
-  function onLocationError(e) {
-    console.log(e.message);
-  }
-
-  map.on("locationfound", onLocationFound);
-  map.on("locationerror", onLocationError);
-
-  map.locate({ setView: true, maxZoom: 16 }); // don't get too close
+  var lc = L.control.locate().addTo(map);
+  lc.start();
 
   // defining map icon
   BicycleIcon = L.Icon.extend({
@@ -128,8 +120,8 @@ function processMapData(mapData) {
   }
 
   // defining layers with the pins and their colors
-  var lBiciPublica = addPins(biciPublica, "orange");
-  var lBicicletario = addPins(bicicletario, "red");
+  // var lBiciPublica = addPins(biciPublica, "orange");
+  // var lBicicletario = addPins(bicicletario, "red");
   var lOficina = addPins(oficina, "blue");
 
   // defining layers with the lines and their colors
@@ -140,8 +132,8 @@ function processMapData(mapData) {
 
   // adding them to the list of layers
   var overlayMaps = {
-    "Bicicletas Públicas": lBiciPublica,
-    Bicicletários: lBicicletario,
+    // "Bicicletas Públicas": lBiciPublica,
+    // Bicicletários: lBicicletario,
     "Oficinas de Bicicleta": lOficina,
     Ciclovias: lCiclovia,
     Ciclofaixas: lCiclofaixa,
@@ -150,7 +142,10 @@ function processMapData(mapData) {
   };
 
   // and adding the list to map
-  L.control.layers(null, overlayMaps).addTo(map);
+  L.control.layers(null, overlayMaps, {
+    collapsed: false,
+
+  }).addTo(map);
 }
 
 function addPins(elements, color) {
