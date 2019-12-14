@@ -32,7 +32,7 @@ function initializeMap() {
       maxZoom: 16
     }
   }).addTo(map);
-  lc.start();
+  // lc.start();
 
   // defining map icon
   BicycleIcon = L.Icon.extend({
