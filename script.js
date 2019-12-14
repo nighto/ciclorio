@@ -4,7 +4,7 @@ var mapData, // object containing JSON response from Google Fusion Tables
   old_update, // UTC date string of last update to compare with current one
   map, // the leaflet map instance
   BicycleIcon, // IconClass to extend with colors
-  bicycleColors = {}; // object to store bicycle icons.
+  mapIcons = {}; // object to store bicycle icons.
 
 function initializeMap() {
   // initializing map zoomed out on the whole city
@@ -14,10 +14,10 @@ function initializeMap() {
   var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 
   L.tileLayer(
-    // mapboxUrl,
-    osmUrl,
+    mapboxUrl,
+    // osmUrl,
     {
-      // id: 'mapbox/streets-v11',
+      id: 'mapbox/streets-v11',
       // id: 'mapbox/light-v9',
       attribution:
         '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
@@ -34,21 +34,20 @@ function initializeMap() {
   }).addTo(map);
   // lc.start(); // disabled while we don't have HTTPS
 
-  // defining map icon
-  BicycleIcon = L.Icon.extend({
+  var BicycleIcon = L.Icon.extend({
     options: {
-      shadowUrl: "img/cycling-shadow.png",
-      iconSize: [32, 37], // size of the icon
-      shadowSize: [51, 37], // size of the shadow
-      iconAnchor: [16, 34], // point of the icon which will correspond to marker's location
-      shadowAnchor: [25, 36], // the same for the shadow
+      // shadowUrl: "img/cycling-shadow.png",
+      // shadowAnchor: [25, 36], // the same for the shadow
+      // shadowSize: [51, 37], // size of the shadow
+      iconSize: [31, 32], // size of the icon
+      iconAnchor: [16, 16], // point of the icon which will correspond to marker's location
       popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
     }
   });
 
-  bicycleColors.blue = new BicycleIcon({ iconUrl: "img/cycling-blue.png" });
-  bicycleColors.red = new BicycleIcon({ iconUrl: "img/cycling-red.png" });
-  bicycleColors.orange = new BicycleIcon({ iconUrl: "img/cycling-orange.png" });
+  mapIcons.oficina = new BicycleIcon({ iconUrl: "img/oficina.png" });
+  mapIcons.bicicletario = new BicycleIcon({ iconUrl: "img/bicicletario.png" });
+  mapIcons.bikesharing = new BicycleIcon({ iconUrl: "img/bikesharing.png" });
 }
 
 function checkLastUpdateMapData() {
@@ -80,7 +79,7 @@ function updateMapData() {
 function loadMapData() {
   var GFT_URL = "data.json"; // formerly Fusion Tables URL
 
-  console.log("loading map data");
+  console.debug("loading map data");
 
   fetch(GFT_URL).then(function(response) {
     response.json().then(function(data) {
@@ -123,25 +122,42 @@ function processMapData(mapData) {
   }
 
   // defining layers with the pins and their colors
-  // var lBiciPublica = addPins(biciPublica, "orange", false);
-  var lBicicletario = addPins(bicicletario, "red", {isDefault: false});
-  var lOficina = addPins(oficina, "blue", {clusterize: false, isDefault: false});
+  var lBiciPublica = addPins(biciPublica, "bikesharing", { isDefault: false });
+  var lBicicletario = addPins(bicicletario, "bicicletario", { isDefault: false });
+  var lOficina = addPins(oficina, "oficina", { clusterize: false, isDefault: false });
 
   // defining layers with the lines and their colors
   var lCiclovia = addLines(ciclovia, "red");
   var lCiclofaixa = addLines(ciclofaixa, "green");
   var lCalcadaCompartilhada = addLines(calcadaCompartilhada, "blue");
-  var lViaCompartilhada = addLines(viaCompartilhada, "cyan");
+  var lViaCompartilhada = addLines(viaCompartilhada, "purple");
+
+  function getLayerThumb(color) {
+    return `
+      <span style='
+        width: 16px;
+        height: 6px;
+        background-color: ${color};
+        display: inline-block;
+        margin-right: 4px;
+        margin-bottom: 2px;
+        '></span>
+    `; 
+  }
+
+  function getLayerCount(elements) {
+    return `<span style="color: lightgray;">${elements.length}</span>`;
+  }
 
   // adding them to the list of layers
   var overlayMaps = {
-    "Ciclovias": lCiclovia,
-    "Ciclofaixas": lCiclofaixa,
-    "Calçadas Compartilhadas": lCalcadaCompartilhada,
-    "Vias Compartilhadas<hr>": lViaCompartilhada,
-    // "Bicicletas Públicas": lBiciPublica,
-    "Bicicletários": lBicicletario,
-    "Oficinas de Bicicleta": lOficina
+    [`${getLayerThumb('red')} Ciclovias ${getLayerCount(ciclovia)}`]: lCiclovia,
+    [`${getLayerThumb('green')} Ciclofaixas ${getLayerCount(ciclofaixa)}`]: lCiclofaixa,
+    [`${getLayerThumb('blue')} Calçadas Compartilhadas ${getLayerCount(calcadaCompartilhada)}`]: lCalcadaCompartilhada,
+    [`${getLayerThumb('purple')} Vias Compartilhadas ${getLayerCount(viaCompartilhada)} <br><br>`]: lViaCompartilhada,
+    // [`<img src="img/bikesharing.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Bicicletas Públicas ${getLayerCount(biciPublica)}`]: lBiciPublica,
+    [`<img src="img/bicicletario.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Bicicletários ${getLayerCount(bicicletario)}`]: lBicicletario,
+    [`<img src="img/oficina.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Oficinas de Bicicleta ${getLayerCount(oficina)}`]: lOficina
   };
 
   // and adding the list to map
@@ -150,7 +166,7 @@ function processMapData(mapData) {
   }).addTo(map);
 }
 
-function addPins(elements, color, options = {}) {
+function addPins(elements, type, options = {}) {
   var { isDefault=true, clusterize=true } = options;
 
   var markerLayer;
@@ -168,7 +184,7 @@ function addPins(elements, color, options = {}) {
     var popupText = "<b>" + title + "</b><br>" + text;
 
     markerLayer.addLayer(
-      L.marker([lat, lon], { icon: bicycleColors[color] }).bindPopup(popupText)
+      L.marker([lat, lon], { icon: mapIcons[type] }).bindPopup(popupText)
     );
   }
 
@@ -204,7 +220,7 @@ function addLines(elements, color, options = {}) {
     );
   }
 
-  console.log(color, linesArray);
+  console.debug(color, linesArray);
 
   if (isDefault) {
     return L.layerGroup(linesArray).addTo(map);
