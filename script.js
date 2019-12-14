@@ -154,7 +154,7 @@ function processMapData(mapData) {
     [`${getLayerThumb('red')} Ciclovias ${getLayerCount(ciclovia)}`]: lCiclovia,
     [`${getLayerThumb('green')} Ciclofaixas ${getLayerCount(ciclofaixa)}`]: lCiclofaixa,
     [`${getLayerThumb('blue')} Calçadas Compartilhadas ${getLayerCount(calcadaCompartilhada)}`]: lCalcadaCompartilhada,
-    [`${getLayerThumb('purple')} Vias Compartilhadas ${getLayerCount(viaCompartilhada)} <br><br>`]: lViaCompartilhada,
+    [`${getLayerThumb('purple')} Vias Compartilhadas ${getLayerCount(viaCompartilhada)}`]: lViaCompartilhada,
     // [`<img src="img/bikesharing.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Bicicletas Públicas ${getLayerCount(biciPublica)}`]: lBiciPublica,
     [`<img src="img/bicicletario.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Bicicletários ${getLayerCount(bicicletario)}`]: lBicicletario,
     [`<img src="img/oficina.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Oficinas de Bicicleta ${getLayerCount(oficina)}`]: lOficina
