@@ -32,7 +32,7 @@ function initializeMap() {
       maxZoom: 16
     }
   }).addTo(map);
-  // lc.start();
+  // lc.start(); // disabled while we don't have HTTPS
 
   // defining map icon
   BicycleIcon = L.Icon.extend({
@@ -124,8 +124,8 @@ function processMapData(mapData) {
 
   // defining layers with the pins and their colors
   // var lBiciPublica = addPins(biciPublica, "orange", false);
-  var lBicicletario = addPins(bicicletario, "red", false);
-  var lOficina = addPins(oficina, "blue", false);
+  var lBicicletario = addPins(bicicletario, "red", {isDefault: false});
+  var lOficina = addPins(oficina, "blue", {clusterize: false, isDefault: false});
 
   // defining layers with the lines and their colors
   var lCiclovia = addLines(ciclovia, "red");
@@ -150,8 +150,15 @@ function processMapData(mapData) {
   }).addTo(map);
 }
 
-function addPins(elements, color, isDefault=true) {
-  var markerLayer = L.layerGroup();
+function addPins(elements, color, options = {}) {
+  var { isDefault=true, clusterize=true } = options;
+
+  var markerLayer;
+  if (clusterize) {
+    markerLayer = L.markerClusterGroup();     
+  } else {
+    markerLayer = L.layerGroup();
+  }
 
   for (var i = 0, len = elements.length; i < len; i++) {
     var lat = elements[i][2].geometry.coordinates[1];
@@ -172,7 +179,9 @@ function addPins(elements, color, isDefault=true) {
   return markerLayer;
 }
 
-function addLines(elements, color, isDefault=true) {
+function addLines(elements, color, options = {}) {
+  var { isDefault=true } = options;
+
   var linesArray = [];
 
   for (var i = 0, li = elements.length; i < li; i++) {
