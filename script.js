@@ -14,11 +14,13 @@ function initializeMap() {
   var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 
   L.tileLayer(
-    mapboxUrl,
-    // osmUrl,
+    // mapboxUrl,
+    osmUrl,
     {
-      id: 'mapbox/streets-v11',
-      // id: 'mapbox/light-v9',
+      // id: 'mapbox/streets-v11',
+      id: 'mapbox/light-v9',
+      maxZoom: 22,
+      minZoom: 10,
       attribution:
         '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
   }).addTo(map);
