@@ -5,6 +5,8 @@ var mapData, // object containing JSON response from Google Fusion Tables
   map, // the leaflet map instance
   BicycleIcon, // IconClass to extend with colors
   mapIcons = {}; // object to store bicycle icons.
+var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
 
 function initializeMap() {
   // initializing map zoomed out on the whole city
@@ -168,7 +170,7 @@ function processMapData(mapData) {
 
   // and adding the list to map
   L.control.layers(null, overlayMaps, {
-    collapsed: false
+    collapsed: isMobile
   }).addTo(map);
 }
 
