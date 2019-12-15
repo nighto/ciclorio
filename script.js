@@ -10,16 +10,20 @@ function initializeMap() {
   // initializing map zoomed out on the whole city
   map = L.map("map").setView(initialLatLon, initialZoomLevel);
 
-  var mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+  var mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY21kYWxiZW0iLCJhIjoiY2s0NzNyZTh3MDI4aTNubXgyOHo5MWI0bSJ9.HNUqwuZz-7GbfbBIdvZqYA';
   var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 
   L.tileLayer(
-    // mapboxUrl,
-    osmUrl,
+    mapboxUrl,
+    // osmUrl,
     {
+      // id: 'cmdalbem/cjgmxdewq002i2ro873yj3bt0',
+      id: 'cmdalbem/ck4741tmk0g1r1coadqbabugy',
       // id: 'mapbox/streets-v11',
-      id: 'mapbox/light-v9',
+      // id: 'mapbox/light-v9',
       maxZoom: 22,
+      tileSize: 512, // special for Mapbox Tiles
+      zoomOffset: -1, // special for Mapbox Tiles
       minZoom: 10,
       attribution:
         '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
@@ -41,7 +45,7 @@ function initializeMap() {
       // shadowUrl: "img/cycling-shadow.png",
       // shadowAnchor: [25, 36], // the same for the shadow
       // shadowSize: [51, 37], // size of the shadow
-      iconSize: [31, 32], // size of the icon
+      iconSize: [32, 32], // size of the icon
       iconAnchor: [16, 16], // point of the icon which will correspond to marker's location
       popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
     }
@@ -173,7 +177,9 @@ function addPins(elements, type, options = {}) {
 
   var markerLayer;
   if (clusterize) {
-    markerLayer = L.markerClusterGroup();     
+    markerLayer = L.markerClusterGroup({
+      disableClusteringAtZoom: 16
+    });
   } else {
     markerLayer = L.layerGroup();
   }
