@@ -20,8 +20,8 @@ function initializeMap() {
     // osmUrl,
     {
       // id: 'cmdalbem/cjgmxdewq002i2ro873yj3bt0',
-      id: 'cmdalbem/ck4741tmk0g1r1coadqbabugy',
-      // id: 'mapbox/streets-v11',
+      // id: 'cmdalbem/ck4741tmk0g1r1coadqbabugy',
+      id: 'mapbox/streets-v11',
       // id: 'mapbox/light-v9',
       maxZoom: 22,
       tileSize: 512, // special for Mapbox Tiles
