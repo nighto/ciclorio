@@ -24,8 +24,8 @@ function initializeMap() {
       id: 'mapbox/streets-v11',
       // id: 'mapbox/light-v9',
       maxZoom: 22,
-      tileSize: 512, // special for Mapbox Tiles
-      zoomOffset: -1, // special for Mapbox Tiles
+      // tileSize: 512, // special for Mapbox Tiles
+      // zoomOffset: -1, // special for Mapbox Tiles
       minZoom: 10,
       attribution:
         '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
