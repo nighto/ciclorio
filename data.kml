@@ -113640,5 +113640,54 @@ Contribuição de Arlindo Pereira.
 					<value></value>
 				</Data>
 			</ExtendedData><Point><coordinates>-43.384817,-22.736592,0.0</coordinates></Point></Placemark>
+			<Placemark>
+			<name>VC0082 - R. Pedro Ernesto</name>
+			<snippet></snippet>
+			<description><![CDATA[<div class="googft-info-window" style="font-family:sans-serif">
+<b>Nome: VC0082 - R. Pedro Ernesto</b><br>
+<b>Descrição:</b> Sharrow com ciclo carimbo pelo lado direito da via.
+</div>]]></description>
+			<styleUrl>#Style3-line-10-map</styleUrl>
+			<ExtendedData>
+				<Data name='cor'>
+					<value>cyan</value>
+				</Data>
+				<Data name='tipo'>
+					<value>Via Compartilhada</value>
+				</Data>
+				<Data name='AB_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_type'>
+					<value></value>
+				</Data>
+				<Data name='BC_covered'>
+					<value></value>
+				</Data>
+				<Data name='BC_paid'>
+					<value></value>
+				</Data>
+				<Data name='way_km'>
+					<value>0.150</value>
+				</Data>
+				<Data name='way_city'>
+					<value>Rio de Janeiro</value>
+				</Data>
+				<Data name='way_AP'>
+					<value>1</value>
+				</Data>
+				<Data name='OB_address'>
+					<value></value>
+				</Data>
+				<Data name='OB_telephone'>
+					<value></value>
+				</Data>
+				<Data name='OB_website'>
+					<value></value>
+				</Data>
+			</ExtendedData><LineString><coordinates>-43.196729,-22.896302,0.0 -43.195254,-22.896383,0.0 </coordinates></LineString></Placemark>
 	</Document>
 </kml>

@@ -60288,6 +60288,32 @@
       "",
       "",
       ""
+    ],
+    [
+      "Sharrow com ciclo carimbo pelo lado direito da via.",
+      "VC0082 - R. Pedro Ernesto",
+      {
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-43.196729, -22.896302, 0.0],
+            [-43.195254, -22.896383, 0.0]
+          ]
+        }
+      },
+      "cyan",
+      "Via Compartilhada",
+      "NaN",
+      "NaN",
+      "",
+      "",
+      "",
+      "0.150",
+      "Rio de Janeiro",
+      "1",
+      "",
+      "",
+      ""
     ]
   ]
 }
