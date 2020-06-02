@@ -113641,19 +113641,19 @@ Contribuição de Arlindo Pereira.
 				</Data>
 			</ExtendedData><Point><coordinates>-43.384817,-22.736592,0.0</coordinates></Point></Placemark>
 			<Placemark>
-			<name>VC0082 - R. Pedro Ernesto</name>
+			<name>CF0055 - Ciclofaixa Rua Pedro Ernesto</name>
 			<snippet></snippet>
 			<description><![CDATA[<div class="googft-info-window" style="font-family:sans-serif">
-<b>Nome: VC0082 - R. Pedro Ernesto</b><br>
-<b>Descrição:</b> Sharrow com ciclo carimbo pelo lado direito da via.
+<b>Nome: CF0054 - Ciclofaixa Rua Pedro Ernesto</b><br>
+<b>Descrição:</b> Do lado direito da via.
 </div>]]></description>
-			<styleUrl>#Style3-line-10-map</styleUrl>
+			<styleUrl>#Style3-line-2-map</styleUrl>
 			<ExtendedData>
 				<Data name='cor'>
-					<value>cyan</value>
+					<value>33ff3373</value>
 				</Data>
 				<Data name='tipo'>
-					<value>Via Compartilhada</value>
+					<value>Ciclofaixa</value>
 				</Data>
 				<Data name='AB_slots'>
 					<value></value>

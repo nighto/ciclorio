@@ -60290,8 +60290,8 @@
       ""
     ],
     [
-      "Sharrow com ciclo carimbo pelo lado direito da via.",
-      "VC0082 - R. Pedro Ernesto",
+      "Ciclofaixa pelo lado direito da via.",
+      "CF0055 - Rua Pedro Ernesto",
       {
         "geometry": {
           "type": "LineString",
@@ -60301,8 +60301,8 @@
           ]
         }
       },
-      "cyan",
-      "Via Compartilhada",
+      "33ff3373",
+      "Ciclofaixa",
       "NaN",
       "NaN",
       "",
