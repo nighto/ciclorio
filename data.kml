@@ -113885,5 +113885,54 @@ Contribuição de Arlindo Pereira.
 					<value></value>
 				</Data>
 			</ExtendedData><LineString><coordinates>-43.205223,-22.899508,0.0 -43.203336,-22.898721,0.0 -43.202398,-22.898360,0.0 -43.202314,-22.898325,0.0 -43.202223,-22.898287,0.0 </coordinates></LineString></Placemark>
+		<Placemark>
+			<name>CV0066 - Ciclovia Praia Formosa</name>
+			<snippet></snippet>
+			<description><![CDATA[<div class="googft-info-window" style="font-family:sans-serif">
+<b>Nome: CV0066 - Ciclovia Praia Formosa</b><br>
+<b>Descrição:</b> Na calçada contornando o Terminal Padre Henrique Otte e o Porto Vida, ao longo da Praça Marechal Hermes, Via D1 e Rua General Luís Mendes de Morais.
+</div>]]></description>
+			<styleUrl>#Style3-line-1-map</styleUrl>
+			<ExtendedData>
+				<Data name='cor'>
+					<value>green</value>
+				</Data>
+				<Data name='tipo'>
+					<value>Ciclovia</value>
+				</Data>
+				<Data name='AB_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_type'>
+					<value></value>
+				</Data>
+				<Data name='BC_covered'>
+					<value></value>
+				</Data>
+				<Data name='BC_paid'>
+					<value></value>
+				</Data>
+				<Data name='way_km'>
+					<value>1.300</value>
+				</Data>
+				<Data name='way_city'>
+					<value>Rio de Janeiro</value>
+				</Data>
+				<Data name='way_AP'>
+					<value>1</value>
+				</Data>
+				<Data name='OB_address'>
+					<value></value>
+				</Data>
+				<Data name='OB_telephone'>
+					<value></value>
+				</Data>
+				<Data name='OB_website'>
+					<value></value>
+				</Data>
+			</ExtendedData><LineString><coordinates>-43.206985,-22.900224,0.0 -43.206897,-22.900322,0.0 -43.206620,-22.900365,0.0 -43.206595,-22.900446,0.0 -43.206479,-22.902586,0.0 -43.206468,-22.903071,0.0 -43.206492,-22.903213,0.0 -43.206550,-22.903365,0.0 -43.207753,-22.905057,0.0 -43.207805,-22.905115,0.0 -43.207864,-22.905130,0.0 -43.207907,-22.905127,0.0 -43.207931,-22.905006,0.0 -43.208114,-22.902435,0.0 -43.208115,-22.902423,0.0 -43.208210,-22.900656,0.0 </coordinates></LineString></Placemark>
 	</Document>
 </kml>
