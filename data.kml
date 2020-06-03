@@ -113791,7 +113791,7 @@ Contribuição de Arlindo Pereira.
 			<name>CF0056 - Ciclofaixa Rua União</name>
 			<snippet></snippet>
 			<description><![CDATA[<div class="googft-info-window" style="font-family:sans-serif">
-<b>Nome: CF0054 - Ciclofaixa Rua União</b><br>
+<b>Nome: CF0056 - Ciclofaixa Rua União</b><br>
 <b>Descrição:</b> Do lado esquerdo da via.
 </div>]]></description>
 			<styleUrl>#Style3-line-2-map</styleUrl>
@@ -113836,5 +113836,54 @@ Contribuição de Arlindo Pereira.
 					<value></value>
 				</Data>
 			</ExtendedData><LineString><coordinates>-43.199088,-22.897318,0.0 -43.199055,-22.897399,0.0 -43.199068,-22.897436,0.0 -43.199106,-22.897481,0.0 -43.199262,-22.897637,0.0 -43.199400,-22.897771,0.0 -43.199939,-22.898317,0.0 -43.199985,-22.898372,0.0 -43.200015,-22.898437,0.0 -43.200044,-22.898498,0.0 -43.200061,-22.898533,0.0 </coordinates></LineString></Placemark>
+		<Placemark>
+			<name>CF0057 - Ciclofaixa Avenida Cidade de Lima</name>
+			<snippet></snippet>
+			<description><![CDATA[<div class="googft-info-window" style="font-family:sans-serif">
+<b>Nome: CF0057 - Ciclofaixa Avenida Cidade de Lima</b><br>
+<b>Descrição:</b> Do lado esquerdo da via, bi-direcional.
+</div>]]></description>
+			<styleUrl>#Style3-line-2-map</styleUrl>
+			<ExtendedData>
+				<Data name='cor'>
+					<value>33ff3373</value>
+				</Data>
+				<Data name='tipo'>
+					<value>Ciclofaixa</value>
+				</Data>
+				<Data name='AB_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_type'>
+					<value></value>
+				</Data>
+				<Data name='BC_covered'>
+					<value></value>
+				</Data>
+				<Data name='BC_paid'>
+					<value></value>
+				</Data>
+				<Data name='way_km'>
+					<value>0.350</value>
+				</Data>
+				<Data name='way_city'>
+					<value>Rio de Janeiro</value>
+				</Data>
+				<Data name='way_AP'>
+					<value>1</value>
+				</Data>
+				<Data name='OB_address'>
+					<value></value>
+				</Data>
+				<Data name='OB_telephone'>
+					<value></value>
+				</Data>
+				<Data name='OB_website'>
+					<value></value>
+				</Data>
+			</ExtendedData><LineString><coordinates>-43.205223,-22.899508,0.0 -43.203336,-22.898721,0.0 -43.202398,-22.898360,0.0 -43.202314,-22.898325,0.0 -43.202223,-22.898287,0.0 </coordinates></LineString></Placemark>
 	</Document>
 </kml>

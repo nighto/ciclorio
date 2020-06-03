@@ -60384,7 +60384,7 @@
     ],
     [
       "Ciclofaixa pelo lado esquerdo da via.",
-      "CF0055 - Rua da União",
+      "CF0056 - Rua da União",
       {
         "geometry": {
           "type": "LineString",
@@ -60411,6 +60411,35 @@
       "",
       "",
       "0.160",
+      "Rio de Janeiro",
+      "1",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Ciclofaixa pelo lado esquerdo da via, bi-direcional.",
+      "CF0057 - Avenida Cidade de Lima",
+      {
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-43.205223, -22.899508, 0.0],
+            [-43.203336, -22.898721, 0.0],
+            [-43.202398, -22.89836, 0.0],
+            [-43.202314, -22.898325, 0.0],
+            [-43.202223, -22.898287, 0.0]
+          ]
+        }
+      },
+      "33ff3373",
+      "Ciclofaixa",
+      "NaN",
+      "NaN",
+      "",
+      "",
+      "",
+      "0.350",
       "Rio de Janeiro",
       "1",
       "",
