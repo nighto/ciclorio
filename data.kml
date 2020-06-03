@@ -113738,5 +113738,54 @@ Contribuição de Arlindo Pereira.
 					<value></value>
 				</Data>
 			</ExtendedData><LineString><coordinates>-43.196159,-22.897224,0.0 -43.196209,-22.897245,0.0 -43.196239,-22.897259,0.0 -43.196270,-22.897271,0.0 -43.196393,-22.897320,0.0 -43.197238,-22.897642,0.0 -43.197318,-22.897668,0.0 -43.197357,-22.897683,0.0 -43.198326,-22.897487,0.0 -43.198908,-22.897365,0.0 -43.199001,-22.897361,0.0 -43.199088,-22.897318,0.0</coordinates></LineString></Placemark>
+		<Placemark>
+			<name>CV0065 - Ciclovia Avenida Professor Pereira Reis</name>
+			<snippet></snippet>
+			<description><![CDATA[<div class="googft-info-window" style="font-family:sans-serif">
+<b>Nome: CV0065 - Ciclovia Avenida Professor Pereira Reis</b><br>
+<b>Descrição:</b> Na calçada do lado direito sentido orla.
+</div>]]></description>
+			<styleUrl>#Style3-line-1-map</styleUrl>
+			<ExtendedData>
+				<Data name='cor'>
+					<value>green</value>
+				</Data>
+				<Data name='tipo'>
+					<value>Ciclovia</value>
+				</Data>
+				<Data name='AB_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_type'>
+					<value></value>
+				</Data>
+				<Data name='BC_covered'>
+					<value></value>
+				</Data>
+				<Data name='BC_paid'>
+					<value></value>
+				</Data>
+				<Data name='way_km'>
+					<value>0.300</value>
+				</Data>
+				<Data name='way_city'>
+					<value>Rio de Janeiro</value>
+				</Data>
+				<Data name='way_AP'>
+					<value>1</value>
+				</Data>
+				<Data name='OB_address'>
+					<value></value>
+				</Data>
+				<Data name='OB_telephone'>
+					<value></value>
+				</Data>
+				<Data name='OB_website'>
+					<value></value>
+				</Data>
+			</ExtendedData><LineString><coordinates>-43.203126,-22.895863,0.0 -43.202855,-22.896425,0.0 -43.202821,-22.896491,0.0 -43.202569,-22.896991,0.0 -43.202542,-22.897049,0.0 -43.201981,-22.898189,0.0 -43.201772,-22.898643,0.0 </coordinates></LineString></Placemark>
 	</Document>
 </kml>
