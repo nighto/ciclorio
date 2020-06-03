@@ -113690,11 +113690,11 @@ Contribuição de Arlindo Pereira.
 				</Data>
 			</ExtendedData><LineString><coordinates>-43.196729,-22.896302,0.0 -43.195254,-22.896383,0.0 </coordinates></LineString></Placemark>
 		<Placemark>
-			<name>VC0082 - R. da Gamboa</name>
+			<name>VC0082 - Rua da Gamboa</name>
 			<snippet></snippet>
 			<description><![CDATA[<div class="googft-info-window" style="font-family:sans-serif">
-<b>Nome: VC0082 - R. da Gamboa</b><br>
-<b>Descrição:</b> Sharrow bi-direcional ao longo da Rua da Gamboa.
+<b>Nome: VC0082 - Rua da Gamboa</b><br>
+<b>Descrição:</b> Sharrow bi-direcional ao longo da via.
 </div>]]></description>
 			<styleUrl>#Style3-line-10-map</styleUrl>
 			<ExtendedData>
@@ -113787,5 +113787,54 @@ Contribuição de Arlindo Pereira.
 					<value></value>
 				</Data>
 			</ExtendedData><LineString><coordinates>-43.203126,-22.895863,0.0 -43.202855,-22.896425,0.0 -43.202821,-22.896491,0.0 -43.202569,-22.896991,0.0 -43.202542,-22.897049,0.0 -43.201981,-22.898189,0.0 -43.201772,-22.898643,0.0 </coordinates></LineString></Placemark>
+		<Placemark>
+			<name>CF0056 - Ciclofaixa Rua União</name>
+			<snippet></snippet>
+			<description><![CDATA[<div class="googft-info-window" style="font-family:sans-serif">
+<b>Nome: CF0054 - Ciclofaixa Rua União</b><br>
+<b>Descrição:</b> Do lado esquerdo da via.
+</div>]]></description>
+			<styleUrl>#Style3-line-2-map</styleUrl>
+			<ExtendedData>
+				<Data name='cor'>
+					<value>33ff3373</value>
+				</Data>
+				<Data name='tipo'>
+					<value>Ciclofaixa</value>
+				</Data>
+				<Data name='AB_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_slots'>
+					<value></value>
+				</Data>
+				<Data name='BC_type'>
+					<value></value>
+				</Data>
+				<Data name='BC_covered'>
+					<value></value>
+				</Data>
+				<Data name='BC_paid'>
+					<value></value>
+				</Data>
+				<Data name='way_km'>
+					<value>0.160</value>
+				</Data>
+				<Data name='way_city'>
+					<value>Rio de Janeiro</value>
+				</Data>
+				<Data name='way_AP'>
+					<value>1</value>
+				</Data>
+				<Data name='OB_address'>
+					<value></value>
+				</Data>
+				<Data name='OB_telephone'>
+					<value></value>
+				</Data>
+				<Data name='OB_website'>
+					<value></value>
+				</Data>
+			</ExtendedData><LineString><coordinates>-43.199088,-22.897318,0.0 -43.199055,-22.897399,0.0 -43.199068,-22.897436,0.0 -43.199106,-22.897481,0.0 -43.199262,-22.897637,0.0 -43.199400,-22.897771,0.0 -43.199939,-22.898317,0.0 -43.199985,-22.898372,0.0 -43.200015,-22.898437,0.0 -43.200044,-22.898498,0.0 -43.200061,-22.898533,0.0 </coordinates></LineString></Placemark>
 	</Document>
 </kml>
