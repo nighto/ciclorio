@@ -130,9 +130,9 @@ function processMapData(mapData) {
   }
 
   // defining layers with the pins and their colors
-  var lBiciPublica = addPins(biciPublica, "bikesharing", { isDefault: false });
-  var lBicicletario = addPins(bicicletario, "bicicletario", { isDefault: false });
-  var lOficina = addPins(oficina, "oficina", { clusterize: false, isDefault: false });
+  var lBiciPublica = addPins(biciPublica, "bikesharing");
+  var lBicicletario = addPins(bicicletario, "bicicletario");
+  var lOficina = addPins(oficina, "oficina", { clusterize: false });
 
   // defining layers with the lines and their colors
   var lCiclovia = addLines(ciclovia, "red");
