@@ -31,15 +31,15 @@ function initializeMap() {
         '&copy; <a href="http://ta.org.br/">Transporte Ativo</a> e <a href="http://openstreetmap.org">OpenStreetMap</a>; Ícones <a href="http://mapicons.nicolasmollet.com/">MapIcons</a>'
   }).addTo(map);
 
-  map.on("locationerror", e => {
-    console.error(e.message);
-  });
+  // map.on("locationerror", e => {
+  //   console.error(e.message);
+  // });
 
-  var lc = L.control.locate({
-    locateOptions: {
-      maxZoom: 16
-    }
-  }).addTo(map);
+  // var lc = L.control.locate({
+  //   locateOptions: {
+  //     maxZoom: 16
+  //   }
+  // }).addTo(map);
   // lc.start(); // disabled while we don't have HTTPS
 
   var BicycleIcon = L.Icon.extend({
