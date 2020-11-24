@@ -19466,6 +19466,33 @@
       ""
     ],
     [
+      "Ciclofaixa bidirecional no bordo esquerdo.",
+      "CF0034 - R. Castilho França",
+      {
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-43.110840,-22.899401,0.0],
+            [-43.111948,-22.900191,0.0],
+            [-43.111987,-22.900218,0.0]
+          ]
+        }
+      },
+      "33ff3373",
+      "Ciclofaixa",
+      "NaN",
+      "NaN",
+      "",
+      "",
+      "",
+      "0.14",
+      "Niterói",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "Pista de treino.",
       "CV0057 - Avenida Quintino Bocaiúva (São Francisco) - Niterói",
       {
