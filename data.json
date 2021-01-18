@@ -66,7 +66,7 @@
       ]
     ],
     [
-      "\u003cdiv dir=\"ltr\"\u003eBairros: Copacabana / Botafogo / Glória \u003cbr\u003eTrajeto: Av. Princesa Isabel, Av. Lauro Sodré, Av. Gal. Severiano, Av. Venceslau Brás, Av. Repórter Nestor Moreira, Av. das Nações Unidas, Av. Infante Dom Henrique, (limites: Praia de Copacabana , Parque do Flamengo) \u003cbr\u003eExtensão: 14,0 Km \u003cbr\u003ePiso: Concreto Colorido / Uninsteim / Asfalto\u003cbr\u003e\u003cbr\u003eTrecho dentro do túnel de mão única.\u003c/div\u003e",
+      "\u003cdiv dir=\"ltr\"\u003eBairros: Copacabana / Botafogo / Glória \u003cbr\u003eTrajeto: Av. Princesa Isabel, Av. Lauro Sodré, Av. Gal. Severiano, Av. Venceslau Brás, Av. Repórter Nestor Moreira, Av. das Nações Unidas, Av. Infante Dom Henrique, (limites: Praia de Copacabana, Parque do Flamengo) \u003cbr\u003eExtensão: 14,0 Km \u003cbr\u003ePiso: Concreto Colorido / Uninsteim / Asfalto\u003cbr\u003e\u003cbr\u003eTrecho dentro do túnel de mão única.\u003c/div\u003e",
       "CV0002 - Ciclovia Mané Garrincha (Copacabana-Centro)",
       {
         "geometry": {
@@ -57317,7 +57317,7 @@
       null
     ],
     [
-      "Endereco: Rua Sá Ferreira , 219.\u003cbr\u003eCentral de Informações: +55 (21) 4063-3999\u003cbr\u003ehttp://www.mobilicidade.com.br/bikerio.asp",
+      "Endereco: Rua Sá Ferreira, 219.\u003cbr\u003eCentral de Informações: +55 (21) 4063-3999\u003cbr\u003ehttp://www.mobilicidade.com.br/bikerio.asp",
       "AB0021 - BikeRio Estação Sá Ferreira",
       {
         "geometry": {
