@@ -108,24 +108,41 @@ function processMapData(mapData) {
   var ciclofaixa = [];
   var calcadaCompartilhada = [];
   var viaCompartilhada = [];
+  var withVideos = [];
+  var withoutVideos = [];
 
   for (var i = 0, len = mapData.rows.length; i < len; i++) {
-    var rowType = mapData.rows[i][4];
+    var row = mapData.rows[i];
+    var rowType = row[4];
+    var hasVideo = row?.[16];
 
     if (rowType === "Bicicleta Publica") {
-      biciPublica.push(mapData.rows[i]);
+      biciPublica.push(row);
     } else if (rowType === "Bicicletario") {
-      bicicletario.push(mapData.rows[i]);
+      bicicletario.push(row);
     } else if (rowType === "Oficina de Bicicleta") {
-      oficina.push(mapData.rows[i]);
+      oficina.push(row);
     } else if (rowType === "Ciclovia") {
-      ciclovia.push(mapData.rows[i]);
+      ciclovia.push(row);
     } else if (rowType === "Ciclofaixa") {
-      ciclofaixa.push(mapData.rows[i]);
+      ciclofaixa.push(row);
     } else if (rowType === "Faixa Compartilhada") {
-      calcadaCompartilhada.push(mapData.rows[i]);
+      calcadaCompartilhada.push(row);
     } else if (rowType === "Via Compartilhada") {
-      viaCompartilhada.push(mapData.rows[i]);
+      viaCompartilhada.push(row);
+    }
+
+    if (
+      rowType === 'Ciclovia' ||
+      rowType === 'Ciclofaixa' ||
+      rowType === 'Faixa Compartilhada' ||
+      rowType === 'Via Compartilhada'
+    ) {
+      if (hasVideo) {
+        withVideos.push(row);
+      } else {
+        withoutVideos.push(row);
+      }
     }
   }
 
@@ -139,6 +156,9 @@ function processMapData(mapData) {
   var lCiclofaixa = addLines(ciclofaixa, "green");
   var lCalcadaCompartilhada = addLines(calcadaCompartilhada, "blue");
   var lViaCompartilhada = addLines(viaCompartilhada, "purple");
+
+  // var lWithoutVideos = addLines(withoutVideos, "black");
+  // var lWithVideos = addLines(withVideos, "red");
 
   function getLayerThumb(color) {
     return `
@@ -165,7 +185,9 @@ function processMapData(mapData) {
     [`${getLayerThumb('purple')} Vias Compartilhadas ${getLayerCount(viaCompartilhada)}`]: lViaCompartilhada,
     // [`<img src="img/bikesharing.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Bicicletas Públicas ${getLayerCount(biciPublica)}`]: lBiciPublica,
     [`<img src="img/bicicletario.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Bicicletários ${getLayerCount(bicicletario)}`]: lBicicletario,
-    [`<img src="img/oficina.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Oficinas de Bicicleta ${getLayerCount(oficina)}`]: lOficina
+    [`<img src="img/oficina.png" style="width: 18px; height: 18px; margin-bottom: -5px;"/> Oficinas de Bicicleta ${getLayerCount(oficina)}`]: lOficina,
+    // [`Vias com vídeo ${getLayerCount(withVideos)}`]: lWithVideos,
+    // [`Vias sem vídeo ${getLayerCount(withoutVideos)}`]: lWithoutVideos,
   };
 
   // and adding the list to map
@@ -214,7 +236,17 @@ function addLines(elements, color, options = {}) {
     var latLonArray = [];
     var title = elements[i][1];
     var text = elements[i][0];
-    var popupText = "<b>" + title + "</b><br>" + text;
+    
+    var videos = elements[i][16];
+    var videosText = '';
+    if (videos) {
+      videosText = '<br><br><b>Videos</b>';
+      videos.forEach(video => {
+        videosText += `<br><a href="${video.url}" target="_blank">${video.description}</a>`;
+      });
+    }
+
+    var popupText = "<b>" + title + "</b><br>" + text + videosText;
     for (
       var j = 0, lj = elements[i][2].geometry.coordinates.length;
       j < lj;
